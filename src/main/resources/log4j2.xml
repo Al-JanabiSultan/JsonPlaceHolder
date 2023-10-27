@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="ConsoleTestAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} %-5level %class.%method{36} - %msg%n"/>
+        </Console>
+        <Console name="ConsoleHookAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} %-5level - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="stepdefinitions.GetPostsStepDefinitions" level="all">
+            <AppenderRef ref="ConsoleTestAppender"/>
+        </Logger>
+        <Logger name="requests" level="all">
+            <AppenderRef ref="ConsoleTestAppender"/>
+        </Logger>
+
+        <Logger name="stepdefinitions.Hooks" level="INFO">
+            <AppenderRef ref="ConsoleHookAppender"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="TestAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>

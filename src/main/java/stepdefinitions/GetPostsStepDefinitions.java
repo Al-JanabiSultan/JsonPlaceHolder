@@ -54,6 +54,7 @@ public class GetPostsStepDefinitions {
     }
 
 
+
     @And("each post should have correct fields")
     public void eachPostShouldHaveCorrectFields() {
         List<PostDTO> postDTOS = getPostsRequest.getModels();
@@ -83,5 +84,10 @@ public class GetPostsStepDefinitions {
     public void theResponseTimeShouldBeLessThanMilliseconds(long expectedResponseTime) {
         long actualResponseTime = getPostsRequest.getResponseTime();
         Assert.assertTrue("The response time is higher than expected!", expectedResponseTime>actualResponseTime);
+    }
+
+    @Then("the user can find the name of the post publisher")
+    public void theUserCanFindTheNamePostPublisher(){
+
     }
 }

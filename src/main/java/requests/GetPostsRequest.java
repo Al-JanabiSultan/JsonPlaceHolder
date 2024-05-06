@@ -7,13 +7,14 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utils.Log4jLogger;
 
 import java.util.List;
 
 
-public class GetPostsRequest extends BaseRequest<PostDTO> {
+public class GetPostsRequest extends GetBaseRequest<PostDTO> {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = Log4jLogger.ClassLogger();
     //These constants could be in a seperate environmental file to have one file for all properties/Or a factory class-
     //If several environments were available, these would make maintenance and potential modifications easier
     protected static final String ENDPOINT = "https://jsonplaceholder.typicode.com";
@@ -28,6 +29,7 @@ public class GetPostsRequest extends BaseRequest<PostDTO> {
     public GetPostsRequest() {
         super(ENDPOINT, PATH);
     }
+
     private RequestSpecification getSpecifications() {
         return RestAssured.given().spec(requestSpecification);
     }
@@ -83,4 +85,5 @@ public class GetPostsRequest extends BaseRequest<PostDTO> {
         LOGGER.info("Response time is "+ response.getTime());
         return response.getTime();
     }
+
 }

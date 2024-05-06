@@ -2,13 +2,13 @@ package requests;
 
 import java.util.List;
 
-public abstract class BaseRequest<Model> {
+public abstract class GetBaseRequest<Model> {
 
     protected final String ENDPOINT;
 
     protected final String PATH;
 
-    protected BaseRequest(String endPoint, String path) {
+    protected GetBaseRequest(String endPoint, String path) {
         this.ENDPOINT = endPoint;
         this.PATH = path;
     }

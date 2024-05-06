@@ -29,6 +29,12 @@ Feature: GET Posts
     When the user sends a GET request to the invalid endpoint
     Then the response should indicate a client error
 
+  @GETVerifyUserPostIntegration
+  Scenario: Verify User and Post are Integrated
+    When the user sends a GET request
+    Then the response status code should be 200
+    Then the user can find the name of the post publisher
+
   @GETVerifyResponseTime
   Scenario: Verify response is an acceptable time
     Given the user sends a GET request

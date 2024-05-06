@@ -5,10 +5,11 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utils.Log4jLogger;
 
 public class Hooks {
 
-    protected static final Logger LOGGER = LogManager.getLogger("stepdefinitions.Hooks");
+    protected static final Logger LOGGER = Log4jLogger.ClassLogger();
     @Before
     public void beforeHook(Scenario scenario){
         LOGGER.info("+-----------------------------------+");

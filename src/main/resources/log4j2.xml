@@ -12,15 +12,15 @@
         <Logger name="stepdefinitions.GetPostsStepDefinitions" level="all">
             <AppenderRef ref="ConsoleTestAppender"/>
         </Logger>
-        <Logger name="requests" level="all">
+        <Logger name="requests" level="all" additivity="false">
             <AppenderRef ref="ConsoleTestAppender"/>
         </Logger>
 
-        <Logger name="stepdefinitions.Hooks" level="INFO">
+        <Logger name="stepdefinitions.Hooks" level="INFO" additivity="false">
             <AppenderRef ref="ConsoleHookAppender"/>
         </Logger>
-        <Root level="error">
-            <AppenderRef ref="TestAppender"/>
+        <Root level="WARN" additivity="false">
+            <AppenderRef ref="ConsoleTestAppender"/>
         </Root>
     </Loggers>
 </Configuration>
